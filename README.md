@@ -1,3 +1,3 @@
-# SamissaRadius
+# TCC Radius Server - DB
 
-Sistema RADIUS Server.
+Sistema RADIUS Server - DB.

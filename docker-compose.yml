@@ -14,8 +14,8 @@ services:
     expose:
       - '3306'
     volumes:
-      - './database/data:/var/lib/mysql'
-      - './database/logs:/var/lib/mysql/logs'
+      - './data:/var/lib/mysql'
+      - './logs:/var/lib/mysql/logs'
     networks:
       - radius_server
 
