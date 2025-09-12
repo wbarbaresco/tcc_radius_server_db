@@ -1,0 +1,24 @@
+services:
+
+  radius-server-db:
+    image: mariadb:11.6
+    container_name: radius-server-db
+    restart: always
+    environment:
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - './database/data:/var/lib/mysql'
+      - './database/logs:/var/lib/mysql/logs'
+    networks:
+      - radius_server
+
+networks:
+  radius_server: # Define a rede que será criada
+    driver: bridge # O driver de rede a ser usado
