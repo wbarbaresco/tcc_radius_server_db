@@ -9,10 +9,10 @@ services:
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASSWORD}
       MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-    ports:
-      - '3306:3306'
-    expose:
-      - '3306'
+    # ports:
+    #   - '3306:3306'
+    # expose:
+    #   - '3306'
     volumes:
       - './data:/var/lib/mysql'
       - './logs:/var/lib/mysql/logs'
@@ -20,5 +20,5 @@ services:
       - radius_server
 
 networks:
-  radius_server: # Define a rede que será criada
-    driver: bridge # O driver de rede a ser usado
+  radius_server: 
+    external: true
